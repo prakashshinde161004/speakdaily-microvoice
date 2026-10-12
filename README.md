@@ -2,10 +2,12 @@
 > **Full-Stack Daily Speech & Pronunciation Micro-Task Platform**  
 > *Built with React 18 + Python FastAPI for Kenpath Labs Full-Stack Engineer Assessment*
 
-🌐 **Live Public Link:** [https://retailers-aerial-treaty-advice.trycloudflare.com](https://retailers-aerial-treaty-advice.trycloudflare.com)  
-*(Accessible worldwide on any phone, Android, iOS, or desktop with full HTTPS microphone permissions)*
+🌐 **Permanent Live App (Any Device):** [https://prakashshinde161004.github.io/speakdaily-microvoice/](https://prakashshinde161004.github.io/speakdaily-microvoice/)  
+⚡ **Alternative Global Mirror:** [https://speakdaily-microvoice.surge.sh](https://speakdaily-microvoice.surge.sh)  
+*(Accessible 24/7 worldwide on any phone, Android, iPhone, tablet, or PC with microphone permissions)*
 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-Active%20HTTPS-10b981.svg?style=flat-square&logo=cloudflare)](https://retailers-aerial-treaty-advice.trycloudflare.com)
+[![GitHub Pages](https://img.shields.io/badge/Live%20App-GitHub%20Pages-success.svg?style=flat-square&logo=github)](https://prakashshinde161004.github.io/speakdaily-microvoice/)
+[![GitHub Repo](https://img.shields.io/badge/GitHub-prakashshinde161004%2Fspeakdaily--microvoice-181717.svg?style=flat-square&logo=github)](https://github.com/prakashshinde161004/speakdaily-microvoice)
 [![React 18](https://img.shields.io/badge/React-18.3.1-61dafb.svg?style=flat-square&logo=react)](https://react.dev/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-Python%203.10-009688.svg?style=flat-square&logo=fastapi)](https://fastapi.tiangolo.com/)
 [![Bundle Size](https://img.shields.io/badge/Gzipped%20Size-69%20kB-10b981.svg?style=flat-square)](https://bundlephobia.com/)
