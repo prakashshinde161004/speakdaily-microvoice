@@ -1,0 +1,62 @@
+{
+  "prakash": {
+    "username": "prakash",
+    "fullName": "Prakash Kumar",
+    "passwordHash": "ef92b778bafe771e89245b89ecbc08a44a4e166c06659911881f383d4473e94f",
+    "country": "\ud83c\uddee\ud83c\uddf3 India",
+    "points": 380,
+    "streak": 5,
+    "xp": 210,
+    "unlockedBadges": [
+      "first_voice",
+      "streak_3",
+      "clarity_master"
+    ],
+    "createdAt": "2026-10-01",
+    "transactions": [
+      {
+        "id": "tx-1",
+        "title": "Day 3 Speaking Task",
+        "points": 65,
+        "type": "earn",
+        "date": "Yesterday, 6:30 PM"
+      },
+      {
+        "id": "tx-2",
+        "title": "Audio QC Verification",
+        "points": 20,
+        "type": "earn",
+        "date": "Yesterday, 6:32 PM"
+      },
+      {
+        "id": "tx-3",
+        "title": "Day 4 Speaking Task",
+        "points": 70,
+        "type": "earn",
+        "date": "Today, 9:15 AM"
+      }
+    ]
+  },
+  "testuser": {
+    "username": "testuser",
+    "fullName": "Test User",
+    "passwordHash": "bd94dcda26fccb4e68d6a31f9b5aac0b571ae266d822620e901ef7ebe3a11d4f",
+    "country": "\ud83c\uddf5\ud83c\udded Philippines",
+    "points": 50,
+    "streak": 1,
+    "xp": 50,
+    "unlockedBadges": [
+      "first_voice"
+    ],
+    "createdAt": "2026-10-12",
+    "transactions": [
+      {
+        "id": "tx-welcome-1791816784",
+        "title": "\ud83c\udf81 Welcome Sign-Up Bonus",
+        "points": 50,
+        "type": "earn",
+        "date": "Just now"
+      }
+    ]
+  }
+}
