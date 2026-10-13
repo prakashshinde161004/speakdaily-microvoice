@@ -17,34 +17,29 @@ import { triggerConfetti } from "./confetti";
 import { checkBackendHealth, syncUserProgressAPI } from "./apiService";
 
 export default function App() {
-  // Current Authenticated User state
+  // Current Authenticated User state — null means NOT logged in
   const [currentUser, setCurrentUser] = useState(() => {
     const saved = localStorage.getItem("speakdaily_active_user");
     if (saved) {
       try { return JSON.parse(saved); } catch (e) {}
     }
-    return {
-      username: "prakash",
-      fullName: "Prakash Kumar",
-      country: "🇮🇳 India",
-      createdAt: "2026-10-01"
-    };
+    return null; // No default user — must sign in first
   });
 
-  // Persistent user state with fallback defaults
+  // Persistent user state with fallback defaults (0 for new/unauthenticated users)
   const [streak, setStreak] = useState(() => {
     const saved = localStorage.getItem("speakdaily_streak");
-    return saved !== null ? parseInt(saved, 10) : 5;
+    return saved !== null ? parseInt(saved, 10) : 0;
   });
 
   const [points, setPoints] = useState(() => {
     const saved = localStorage.getItem("speakdaily_points");
-    return saved !== null ? parseInt(saved, 10) : 380;
+    return saved !== null ? parseInt(saved, 10) : 0;
   });
 
   const [xp, setXp] = useState(() => {
     const saved = localStorage.getItem("speakdaily_xp");
-    return saved !== null ? parseInt(saved, 10) : 210;
+    return saved !== null ? parseInt(saved, 10) : 0;
   });
 
   const [currency, setCurrency] = useState(CURRENCIES.INR);
@@ -61,6 +56,9 @@ export default function App() {
   const [isBadgesOpen, setIsBadgesOpen] = useState(false);
   const [isAuthOpen, setIsAuthOpen] = useState(false);
   const [isAccountOpen, setIsAccountOpen] = useState(false);
+
+  // If not logged in, force-show the auth screen
+  const isLoggedIn = currentUser !== null;
 
   const [unlockedBadges, setUnlockedBadges] = useState([
     "first_voice",
@@ -114,10 +112,13 @@ export default function App() {
   const handleLogout = () => {
     setCurrentUser(null);
     localStorage.removeItem("speakdaily_active_user");
+    localStorage.removeItem("speakdaily_streak");
+    localStorage.removeItem("speakdaily_points");
+    localStorage.removeItem("speakdaily_xp");
     // Reset to initial visitor state
-    setPoints(50);
-    setStreak(1);
-    setXp(50);
+    setPoints(0);
+    setStreak(0);
+    setXp(0);
   };
 
   // Determine current multiplier based on level
@@ -207,6 +208,23 @@ export default function App() {
 
   const activeTask = DAILY_TASKS[currentTaskIndex];
 
+  // ─── If NOT logged in, render a full-screen Auth gate ───
+  if (!isLoggedIn) {
+    return (
+      <div className="app-container">
+        <div className="mobile-frame">
+          <AuthModal
+            isOpen={true}
+            onClose={() => {}} /* non-dismissable */
+            onAuthSuccess={handleAuthSuccess}
+            fullScreen={true}
+          />
+        </div>
+      </div>
+    );
+  }
+
+  // ─── Logged-in Dashboard ───
   return (
     <div className="app-container">
       <div className="mobile-frame">
